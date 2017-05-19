@@ -1,6 +1,12 @@
-#include <stdio.h>
+#include <stdlib.h>
+#include "table.h"
+#include "file.h"
 
 int main() {
-    printf("Hello, World!\n");
-    return 0;
+
+    Table_t table = {NULL};
+
+    file_load("list.dat", table);
+
+    return EXIT_SUCCESS;
 }
