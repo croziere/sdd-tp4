@@ -16,11 +16,13 @@ typedef struct cell
 
 Cellule_t* table_creer_cell();
 Cellule_t* table_init_cell(TableKey_t, TableContent_t);
-Cellule_t** table_recherchePrec(Cellule_t **, unsigned int, bool *);
+Cellule_t** table_recherchePrec(Cellule_t **, TableKey_t, bool *);
 void table_insertion_liste(Cellule_t*, Cellule_t**);
 void table_insertion(Table_t, TableKey_t, TableContent_t);
-void table_parser(char *);
+void table_afficher(Table_t);
+void table_liberer(Table_t);
+void table_liste_liberer(Cellule_t*);
 
-
+TableContent_t table_value(Table_t, TableKey_t);
 
 #endif
