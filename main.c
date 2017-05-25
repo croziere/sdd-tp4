@@ -1,18 +1,9 @@
 #include <stdlib.h>
-#include "table.h"
-#include "file.h"
+#include "controller.h"
 
-int main() {
+int main(int argc, char **argv) {
 
-    Table_t table = {NULL};
-
-    file_load("list.dat", table);
-
-    table_afficher(table);
-
-    printf("Traduction de %s en %s", "uncle", table_value(table, "uncle"));
-
-    table_liberer(table);
+    controller_main(argc, argv);
 
     return EXIT_SUCCESS;
 }
