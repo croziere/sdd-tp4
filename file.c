@@ -20,7 +20,7 @@ int file_load(const char *path, Table_t table)
     }
     else
     {
-        statusCode = 1/*errno*/;
+        statusCode = 1;
     }
 
     return statusCode;

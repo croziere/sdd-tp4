@@ -48,7 +48,6 @@ Cellule_t **table_recherchePrec(Cellule_t **list, TableKey_t key, bool *found)
 void table_insertion_liste(Cellule_t * cell, Cellule_t **list)
 {
     bool found = false;
-    Cellule_t* tmp = NULL;
     Cellule_t** prec = table_recherchePrec(list, cell->key, &found);
 
     if (found)
@@ -58,7 +57,6 @@ void table_insertion_liste(Cellule_t * cell, Cellule_t **list)
     }
     else
     {
-        tmp = *prec;
         cell->next = *prec;
         *prec = cell;
     }

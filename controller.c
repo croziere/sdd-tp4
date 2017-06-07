@@ -9,6 +9,7 @@ void controller_show_menu()
     puts("");
     puts("\t1) Afficher la table");
     puts("\t2) Ajouter une traduction");
+    puts("\t3) Traduire une phrase");
     puts("\t0) Quitter");
     puts("");
 }
@@ -57,8 +58,11 @@ void controller_do(Table_t table, int choix)
         case 2:
             controller_add_translation(table);
             break;
+        case 3:
+            controller_translate(table);
+            break;
         default:
-            puts("Commande non reconnue");
+            puts("Commande inconnue");
     }
 }
 
@@ -84,8 +88,26 @@ void controller_add_translation(Table_t table)
     table_insertion(table, key, value);
 }
 
-void controller_usage()
-{
-    puts("Usage:");
-    puts("\t./tp4 <filename>");
+void controller_translate(Table_t table) {
+    char buf[100];
+    char *cur = buf;
+
+    printf("Phrase à traduire : ");
+    fflush(stdout);
+    fgets(buf, 100, stdin);
+
+    if (buf[strlen(buf) - 1] == '\n') {
+        buf[strlen(buf) - 1] = '\0';
+    }
+
+    printf("%s => ", buf);
+
+    cur = strtok(buf, " ");
+
+    do
+    {
+        printf("%s ", table_value(table, cur));
+    } while ((cur = strtok(NULL, " ")));
+
+    printf("\n");
 }

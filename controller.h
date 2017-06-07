@@ -19,6 +19,6 @@ void controller_do(Table_t, int);
 
 void controller_add_translation(Table_t);
 
-void controller_usage();
+void controller_translate(Table_t);
 
 #endif
