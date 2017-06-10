@@ -37,5 +37,7 @@ int main(int argc, char **argv) {
     puts("-- Traduction --");
     controller_translate(table);
 
+    table_liberer(table);
+
     return EXIT_SUCCESS;
 }
