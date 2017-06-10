@@ -1,6 +1,11 @@
 #include <ctype.h>
 #include "hash.h"
 
+/**
+ * Fonction de hachage d'une chaine de caractère
+ * @param str La chaine à hacher
+ * @return Le hash
+ */
 unsigned int hash_string(const char *str)
 {
     unsigned int hash = 5381;

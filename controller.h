@@ -4,11 +4,6 @@
 #include <stdio.h>
 #include "table.h"
 
-typedef struct state {
-    Table_t *table;
-    int choix;
-}State_t;
-
 void controller_show_menu();
 
 int controller_prompt();
