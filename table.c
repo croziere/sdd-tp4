@@ -72,10 +72,14 @@ void table_insertion_liste(Cellule_t * cell, Cellule_t **list)
 {
     bool found = false;
     Cellule_t** prec = table_recherchePrec(list, cell->key, &found);
+    TableContent_t tmp = NULL;
 
     if (found)
     {
+        tmp = (*prec)->content;
         (*prec)->content = cell->content;
+        free(tmp);
+        free(cell->key);
         free(cell);
     }
     else
